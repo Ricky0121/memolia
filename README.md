@@ -114,3 +114,6 @@ AIストーリー生成機能：OpenAI API(gpt-4o or gpt-4o mini)
 
 ## 画面遷移図
 Figma：https://www.figma.com/site/4D8lZwbKAHYjv9tsCEnA9v/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&p=f&t=4Zx3PDhoIJnnOniT-0
+
+Figmaにて開けない場合は、下記URLより確認お願いします。
+https://drive.google.com/file/d/1jlU6a6yu0bGwcZeRNmCTUo2NRuB8IGgz/view?usp=sharing

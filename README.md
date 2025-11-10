@@ -89,6 +89,8 @@ MVPリリースまでに実装したい機能
 ・アカウントの思い出投稿一覧
 ・アカウント毎の画像アップロード+メッセージ機能
 ・ストーリーAI自動生成機能
+　参考URL：https://www.gluegent.com/blog/2024/05/gpt-4o-api.html
+　　　　　　https://qiita.com/MaTTA_RUNTEQ50B/items/3cb46ddf1be17899df00
 
 MVPリリース時点では個人で写真+メッセージからストーリーの自動生成が出来るところまでを実装します。
 
@@ -109,3 +111,6 @@ MVPリリース時点では個人で写真+メッセージからストーリー�
 デプロイ先：Render
 ユーザー認証機能：Devise
 AIストーリー生成機能：OpenAI API(gpt-4o or gpt-4o mini)
+
+## 画面遷移図
+Figma：https://www.figma.com/site/4D8lZwbKAHYjv9tsCEnA9v/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&p=f&t=4Zx3PDhoIJnnOniT-0

@@ -113,4 +113,4 @@ MVPリリース時点では個人で写真+メッセージからストーリー�
 AIストーリー生成機能：OpenAI API(gpt-4o or gpt-4o mini)
 
 ## 画面遷移図
-Figma：https://www.figma.com/site/4D8lZwbKAHYjv9tsCEnA9v/%E7%94%BB%E9%9D%A2%E9%81%B7%E7%A7%BB%E5%9B%B3?node-id=0-1&t=cdpNAJQRtqYt4G2r-1
+Figma：https://www.figma.com/design/GTpD3XSlg1hWWOl12knlkS/Autoflow--%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3---Community-?node-id=0-1&t=7FyLMDWDdzxhR6NW-1

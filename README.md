@@ -114,3 +114,6 @@ AIストーリー生成機能：OpenAI API(gpt-4o or gpt-4o mini)
 
 ## 画面遷移図
 Figma：https://www.figma.com/design/GTpD3XSlg1hWWOl12knlkS/Autoflow--%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3---Community-?node-id=0-1&t=7FyLMDWDdzxhR6NW-1
+
+## ER図
+https://app.diagrams.net/#G12gYYRwC_uhzJ_zncdFw4YtUqakouI19D#%7B%22pageId%22%3A%22Cx6swbxrcvGhyT_f9G09%22%7D

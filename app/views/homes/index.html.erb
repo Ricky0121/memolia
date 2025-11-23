@@ -1,5 +1,30 @@
-<div class="feature-card">
-  <img src="<%= asset_path 'トップ画面サンプル.jpeg' %>" alt="トップ画面">
-  <h3>写真＋ひとことで投稿</h3>
-  <p>日記を書く負担なし。毎日1枚でもOK!</p>
+<div class="top-wrapper">
+
+  <section class="hero">
+    <h1 class="hero__title">あなたの思い出を、物語に。</h1>
+    <p class="hero__subtitle">写真と一言の投稿だけで、AIが心あたたまるストーリーを生成します。</p>
+    <%= link_to "はじめる", "#", class: "hero__button" %>
+  </section>
+
+  <section class="features">
+    <h2 class="section-title">できること</h2>
+    <div class="features__list">
+      <div class="feature-card">
+        <%= image_tag "トップ画面サンプル.jpeg", class: "feature-card__icon" %>
+        <h3>写真＋ひとことで投稿</h3>
+        <p>日記を書く負担なし。毎日1枚でもOK。</p>
+      </div>
+      <div class="feature-card">
+        <%= image_tag "トップ画面サンプル.jpeg", class: "feature-card__icon" %>
+        <h3>AIストーリー自動生成</h3>
+        <p>投稿をもとに感情豊かなストーリーを自動生成。</p>
+      </div>
+      <div class="feature-card">
+        <%= image_tag "トップ画面サンプル.jpeg", class: "feature-card__icon" %>
+        <h3>思い出の振り返り</h3>
+        <p>週・月単位でストーリーをまとめて読めます。</p>
+      </div>
+    </div>
+  </section>
+
 </div>

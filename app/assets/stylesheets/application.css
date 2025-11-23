@@ -1,15 +1,26 @@
-/*
- * This is a manifest file that'll be compiled into application.css, which will include all the files
- * listed below.
- *
- * Any CSS (and SCSS, if configured) file within this directory, lib/assets/stylesheets, or any plugin's
- * vendor/assets/stylesheets directory can be referenced here using a relative path.
- *
- * You're free to add application-wide styles to this file and they'll appear at the bottom of the
- * compiled file so the styles you add here take precedence over styles defined in any other CSS
- * files in this directory. Styles in this file should be added after the last require_* statement.
- * It is generally better to create a new file per style scope.
- *
- *= require_tree .
- *= require_self
- */
+/* ヒーロー右側モック拡大 */
+.lp__hero-inner {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 32px;
+}
+@media (max-width: 900px) {
+  .lp__hero-inner {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ボタンホバー効果 */
+.btn--primary:hover {
+  transform: scale(1.05);
+  transition: transform .2s;
+}
+
+/* 特徴アイコン付き */
+.feature-card {
+  text-align: center;
+}
+.feature-card__icon {
+  width: 48px;
+  margin: 0 auto 12px;
+}

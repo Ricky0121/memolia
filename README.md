@@ -111,9 +111,14 @@ MVPリリース時点では個人で写真+メッセージからストーリー�
 デプロイ先：Render
 ユーザー認証機能：Devise
 AIストーリー生成機能：OpenAI API(gpt-4o or gpt-4o mini)
+ストレージ管理機能：ActiveStorage
+外部ストレージサービス：AWS S3
 
 ## 画面遷移図
 Figma：https://www.figma.com/design/GTpD3XSlg1hWWOl12knlkS/Autoflow--%E3%82%B3%E3%83%9F%E3%83%A5%E3%83%8B%E3%83%86%E3%82%A3---Community-?node-id=0-1&t=7FyLMDWDdzxhR6NW-1
 
 ## ER図
 https://gyazo.com/7b4c99d93b1f8c2bf1a0f564be2899b3
+
+## Projects
+https://github.com/users/Ricky0121/projects/1

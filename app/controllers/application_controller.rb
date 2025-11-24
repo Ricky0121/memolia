@@ -7,4 +7,12 @@ class ApplicationController < ActionController::Base
     devise_parameter_sanitizer.permit(:sign_up, keys: [:name])
     devise_parameter_sanitizer.permit(:account_update, keys: [:name])
   end
+
+  layout :layout_by_resource
+
+  private
+
+  def layout_by_resource
+    devise_controller? ? "devise" : "application"
+  end
 end

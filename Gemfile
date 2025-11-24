@@ -72,5 +72,6 @@ group :test do
 end
 
 gem "rails-i18n", "~> 7.0"
+gem "devise-i18n"
 
 gem "devise"

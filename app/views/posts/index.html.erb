@@ -1,0 +1,23 @@
+<h2>あなたの投稿一覧</h2>
+
+<%= link_to "新規投稿", new_post_path %>
+
+<% if @posts.any? %>
+  <ul>
+    <% @posts.each do |post| %>
+      <li>
+        <%= link_to post_path(post) do %>
+          <% if post.image_url.present? %>
+            <div>
+              <img src="<%= post.image_url %>" alt="投稿画像" style="max-width: 200px;">
+            </div>
+          <% end %>
+          <p><%= truncate(post.message, length: 50) %></p>
+          <p><%= post.posted_on&.strftime("%Y-%m-%d") %></p>
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>まだ投稿がありません。</p>
+<% end %>

@@ -110,7 +110,7 @@ MVPリリース時点では個人で写真+メッセージからストーリー�
 データベース：PostgreSQL
 デプロイ先：Render
 ユーザー認証機能：Devise
-AIストーリー生成機能：OpenAI API(gpt-4o or gpt-4o mini)
+AIストーリー生成機能：OpenAI API(gpt-4o)
 ストレージ管理機能：ActiveStorage
 外部ストレージサービス：AWS S3
 

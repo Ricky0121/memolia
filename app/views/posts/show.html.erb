@@ -1,0 +1,16 @@
+<h2>投稿詳細</h2>
+
+<% if @post.image_url.present? %>
+  <p>
+    <img src="<%= @post.image_url %>" alt="投稿画像" style="max-width: 400px;">
+  </p>
+<% end %>
+
+<p><strong>メッセージ</strong></p>
+<p><%= simple_format(@post.message) %></p>
+
+<p><strong>思い出の日付</strong></p>
+<p><%= @post.posted_on&.strftime("%Y-%m-%d") %></p>
+
+<%= link_to "投稿一覧に戻る", posts_path %>
+<%= link_to "新規投稿", new_post_path %>

@@ -78,3 +78,6 @@ gem "rails-i18n", "~> 7.0"
 gem "devise-i18n"
 
 gem "devise"
+
+gem "openai"
+gem "dotenv-rails", groups: [:development, :test]

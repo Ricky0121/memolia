@@ -1,16 +1,48 @@
 <h2>投稿詳細</h2>
 
+<p>
+  <strong>メッセージ</strong><br>
+  <%= @post.message %>
+</p>
+
+<p>
+  <strong>思い出の日付</strong><br>
+  <%= @post.posted_on %>
+</p>
+
 <% if @post.image_url.present? %>
   <p>
-    <img src="<%= @post.image_url %>" alt="投稿画像" style="max-width: 400px;">
+    <strong>画像</strong><br>
+    <img src="<%= @post.image_url %>" alt="投稿画像" style="max-width: 300px;">
   </p>
 <% end %>
 
-<p><strong>メッセージ</strong></p>
-<p><%= simple_format(@post.message) %></p>
+<hr>
 
-<p><strong>思い出の日付</strong></p>
-<p><%= @post.posted_on&.strftime("%Y-%m-%d") %></p>
+<%= button_to "この投稿からストーリーを生成する",
+              post_stories_path(@post),
+              method: :post,
+              data: { turbo: false },
+              class: "btn btn-primary" %>
+
+<hr>
+
+<h3>生成されたストーリー</h3>
+
+<% if @post.stories.any? %>
+  <% @post.stories.order(created_at: :desc).each do |story| %>
+    <div class="story-block">
+      <h4><%= story.title %></h4>
+      <p><%= simple_format(story.body) %></p>
+      <p class="meta">
+        生成日: <%= story.generated_on || story.created_at.to_date %>
+      </p>
+      <hr>
+    </div>
+  <% end %>
+<% else %>
+  <p>まだストーリーは生成されていません。</p>
+<% end %>
 
 <%= link_to "投稿一覧に戻る", posts_path %>
 <%= link_to "新規投稿", new_post_path %>

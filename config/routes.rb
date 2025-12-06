@@ -14,4 +14,7 @@ Rails.application.routes.draw do
   root "homes#index"
 
   resources :posts, only: %i[index new create show]
+  resources :posts do
+    resources :stories, only: [:create]
+  end
 end

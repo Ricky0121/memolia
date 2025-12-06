@@ -19,7 +19,7 @@ class StoryGenerationService
       model: MODEL_NAME,
       messages: [
         {
-          role: :system,
+          role: :system, 
           content: "あなたは家族や友人との思い出を、あたたかい日本語の物語に仕立てるストーリーテラーです。"
         },
         {

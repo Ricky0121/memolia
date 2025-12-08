@@ -52,7 +52,7 @@ RSpec.describe "投稿機能", type: :system do
       user: user,
       image_url: "https://example.com/list_sample.jpg",
       message: "一覧テスト用の投稿です",
-      posted_on: Date.today
+      posted_on: Time.zone.today
     )
 
     visit posts_path

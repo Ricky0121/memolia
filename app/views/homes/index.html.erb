@@ -1,30 +1,64 @@
 <div class="top-wrapper">
+  <div class="lp__hero-inner">
+    <div>
+      <div class="hero__logo">Memolia</div>
+      <h1 class="hero__title">
+        あなたの「日常」をつないで家族や友人と共有出来るストーリーに
+      </h1>
+      <p class="hero__subtitle">
+        写真の投稿とひとことを残すだけで、AIがストーリーを作ってくれます。
+        忙しくても、1日1枚から気軽に続けられる日記アプリです。
+      </p>
+      <p class="hero__note">
+        離れて暮らす家族や大切な人と思い出を、Memoliaで共有してみませんか。
+      </p>
 
-  <section class="hero">
-    <h1 class="hero__title">あなたの思い出を、物語に。</h1>
-    <p class="hero__subtitle">写真と一言の投稿だけで、AIが心あたたまるストーリーを生成します。</p>
-    <%= link_to "はじめる", "#", class: "hero__button" %>
-  </section>
+       <% if user_signed_in? %>
+        <%= link_to "今日の思い出を投稿する", new_post_path, class: "btn btn--primary" %>
+        <p class="hero__note">
+          <%= link_to "投稿一覧を見る", posts_path %>
+        </p>
+      <% else %>
+        <%= link_to "メールアドレスで始める", new_user_registration_path, class: "btn btn--primary" %><br>
+        <p class="hero__note">
+          アカウントをお持ちの方は
+          <%= link_to "ログイン", new_user_session_path %>
+        </p>
+      <% end %>
+    </div>
+
+    <div class="hero-mock">
+      <div class="hero-mock__card">
+        <%= image_tag "トップ画面サンプル.jpeg", class: "hero-mock__image" %>
+        <p class="hero-mock__caption">
+          「今日は家族でピクニックを楽しみました。」<br>
+          そんな一瞬も、Memoliaがストーリーとして残してくれます。
+        </p>
+      </div>
+    </div>
+  </div>
 
   <section class="features">
-    <h2 class="section-title">できること</h2>
+    <h2 class="section-title">Memoliaでできること</h2>
     <div class="features__list">
+
       <div class="feature-card">
-        <%= image_tag "トップ画面サンプル.jpeg", class: "feature-card__icon" %>
+        <%= image_tag "投稿イメージ.jpeg", class: "feature-card__icon-large" %>
         <h3>写真＋ひとことで投稿</h3>
-        <p>日記を書く負担なし。毎日1枚でもOK。</p>
+        <p>長文はいりません。1枚の写真とひとことだけでOK。</p>
       </div>
+
       <div class="feature-card">
-        <%= image_tag "トップ画面サンプル.jpeg", class: "feature-card__icon" %>
+        <%= image_tag "AIストーリー自動生成.jpeg", class: "feature-card__icon-large" %>
         <h3>AIストーリー自動生成</h3>
-        <p>投稿をもとに感情豊かなストーリーを自動生成。</p>
+        <p>投稿をもとに、心あたたまる物語を自動で生成します。</p>
       </div>
+
       <div class="feature-card">
-        <%= image_tag "トップ画面サンプル.jpeg", class: "feature-card__icon" %>
-        <h3>思い出の振り返り</h3>
-        <p>週・月単位でストーリーをまとめて読めます。</p>
+        <%= image_tag "振り返り.jpeg", class: "feature-card__icon-large" %>
+        <h3>あとから振り返り</h3>
+        <p>後から読み返したときに「やっててよかった」と思える記録に。</p>
       </div>
     </div>
   </section>
-
 </div>

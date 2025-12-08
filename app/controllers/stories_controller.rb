@@ -7,9 +7,9 @@ class StoriesController < ApplicationController
     story = service.call
 
     if story.present?
-      flash[:notice] = "ストーリーを生成しました。"
+      flash[:notice] = t("flash.stories.create.success")
     else
-      flash[:alert] = "ストーリーの生成に失敗しました。時間をおいて再度お試しください。"
+      flash[:alert] = t("flash.stories.create.failure")
     end
 
     redirect_to post_path(@post)

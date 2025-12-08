@@ -6,23 +6,22 @@ class PostsController < ApplicationController
     @posts = current_user.posts.order(created_at: :desc)
   end
 
+  def show; end
+
   def new
     @post = current_user.posts.new
   end
 
   def create
     @post = current_user.posts.new(post_params)
-    @post.posted_on ||= Date.today
+    @post.posted_on ||= Time.zone.today
 
     if @post.save
-      redirect_to @post, notice: "投稿を作成しました。"
+      redirect_to @post, notice: t("flash.posts.create.success")
     else
-      flash.now[:alert] = "投稿に失敗しました。入力内容を確認してください。"
+      flash.now[:alert] = t("flash.posts.create.failure")
       render :new, status: :unprocessable_content
     end
-  end
-
-  def show
   end
 
   private

@@ -1,6 +1,15 @@
 <h2>あなたの投稿一覧</h2>
 
-<%= link_to "新規投稿", new_post_path %>
+<div class="post-index-actions">
+  <%= link_to "新規投稿", new_post_path, class: "btn btn--primary" %>
+  <%= button_to "1週間のストーリーを生成する",
+        generate_weekly_period_stories_path,
+        method: :post,
+        class: "btn btn--primary" %>
+  <%= link_to "ストーリー一覧を見る",
+              period_stories_path,
+              class: "btn btn--primary" %>
+</div>
 
 <% if @posts.any? %>
   <ul>

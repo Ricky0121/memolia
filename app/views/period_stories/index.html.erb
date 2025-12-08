@@ -1,0 +1,21 @@
+<h2>ストーリー一覧</h2>
+
+<% if @period_stories.any? %>
+  <ul>
+    <% @period_stories.each do |story| %>
+      <li>
+        <%= link_to period_story_path(story) do %>
+          <strong>
+            <%= story.period_start_on.strftime("%Y-%m-%d") %> 〜
+            <%= story.period_end_on.strftime("%Y-%m-%d") %>
+          </strong>
+          （<%= story.period_type_i18n rescue story.period_type %>）
+        <% end %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>まだ保存されたストーリーはありません。</p>
+<% end %>
+
+<%= link_to "投稿一覧へ戻る", posts_path %>

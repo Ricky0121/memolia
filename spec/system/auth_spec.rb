@@ -36,7 +36,7 @@ RSpec.describe "認証機能", type: :system do
     fill_in "user_password", with: "password"
     click_button "Log in"
 
-    click_link "ログアウト"
+    click_button "ログアウト"
 
     expect(page).to have_content "ログアウトしました"
     expect(page).to have_current_path root_path

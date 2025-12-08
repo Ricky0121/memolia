@@ -1,0 +1,80 @@
+<h2>1週間のストーリー</h2>
+
+<p>
+  期間：
+  <%= @period_story.period_start_on.strftime("%Y-%m-%d") %>
+  〜
+  <%= @period_story.period_end_on.strftime("%Y-%m-%d") %>
+</p>
+
+<% if @posts_in_period.any? %>
+  <hr>
+
+  <h3>この1週間の思い出スライド</h3>
+
+  <div class="period-slideshow">
+    <% @posts_in_period.each_with_index do |post, index| %>
+      <div class="period-slide <%= "is-active" if index.zero? %>">
+        <div class="period-slide__image-wrapper">
+          <img
+            src="<%= post.image_url %>"
+            alt="投稿画像"
+            class="period-slide__image"
+          >
+        </div>
+      </div>
+    <% end %>
+  </div>
+<% else %>
+  <p>この期間には画像付きの投稿がまだありません。</p>
+<% end %>
+
+<hr>
+
+<h3>AI がまとめたストーリー</h3>
+<div class="period-story-body">
+  <%= simple_format(@period_story.body) %>
+</div>
+
+<div class="period-story-actions" style="margin: 20px 0;">
+  <%= button_to "このストーリーを保存する",
+                save_to_list_period_story_path(@period_story),
+                method: :post,
+                class: "btn btn--primary" %>
+</div>
+
+<hr>
+
+<%= link_to "投稿一覧に戻る", posts_path %>
+
+<%= javascript_tag do %>
+  (function() {
+    function initPeriodSlideshows() {
+      var slideshows = document.querySelectorAll(".period-slideshow");
+
+      slideshows.forEach(function(slideshow) {
+        var slides = slideshow.querySelectorAll(".period-slide");
+        if (slides.length === 0) return;
+
+        var currentIndex = 0;
+        var intervalMs = 4000; // 4秒ごとに切り替え
+
+        function showSlide(index) {
+          slides.forEach(function(slide, i) {
+            slide.classList.toggle("is-active", i === index);
+          });
+        }
+
+        showSlide(currentIndex);
+
+        setInterval(function() {
+          currentIndex = (currentIndex + 1) % slides.length;
+          showSlide(currentIndex);
+        }, intervalMs);
+      });
+    }
+
+    document.addEventListener("turbo:load", initPeriodSlideshows);
+    document.addEventListener("DOMContentLoaded", initPeriodSlideshows);
+  })();
+<% end %>

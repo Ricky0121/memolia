@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>RunteqGraduationWork</title>
+    <title>Memolia</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,7 +12,10 @@
 
   <body>
     <% if user_signed_in? %>
-    <%= link_to "ログアウト", destroy_user_session_path, data: { turbo_method: :delete } %>
+      <%= button_to "ログアウト",
+                    destroy_user_session_path,
+                    method: :delete,
+                    class: "btn btn--primary" %>
     <% else %>
       <%= link_to "ログイン", new_user_session_path %> |
       <%= link_to "新規登録", new_user_registration_path %>

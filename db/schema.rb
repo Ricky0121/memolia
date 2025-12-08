@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2025_11_30_022636) do
+ActiveRecord::Schema[7.1].define(version: 2025_12_07_095800) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -29,6 +29,21 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_30_022636) do
     t.datetime "updated_at", null: false
     t.index ["post_id"], name: "index_ai_generations_on_post_id"
     t.index ["user_id"], name: "index_ai_generations_on_user_id"
+  end
+
+  create_table "period_stories", force: :cascade do |t|
+    t.bigint "user_id", null: false
+    t.bigint "ai_generation_id", null: false
+    t.string "title", null: false
+    t.text "body", null: false
+    t.date "period_start_on", null: false
+    t.date "period_end_on", null: false
+    t.integer "period_type", default: 0, null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.boolean "saved", default: false, null: false
+    t.index ["ai_generation_id"], name: "index_period_stories_on_ai_generation_id"
+    t.index ["user_id"], name: "index_period_stories_on_user_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -80,6 +95,8 @@ ActiveRecord::Schema[7.1].define(version: 2025_11_30_022636) do
 
   add_foreign_key "ai_generations", "posts"
   add_foreign_key "ai_generations", "users"
+  add_foreign_key "period_stories", "ai_generations"
+  add_foreign_key "period_stories", "users"
   add_foreign_key "photos", "posts"
   add_foreign_key "posts", "users"
   add_foreign_key "stories", "ai_generations"

@@ -19,7 +19,7 @@ class StoryGenerationService
       model: MODEL_NAME,
       messages: [
         {
-          role: :system, 
+          role: :system,
           content: "あなたは家族や友人との思い出を、あたたかい日本語の物語に仕立てるストーリーテラーです。"
         },
         {
@@ -50,7 +50,7 @@ class StoryGenerationService
       body: parsed[:body],
       generated_on: Date.current
     )
-  rescue => e
+  rescue StandardError => e
     Rails.logger.error("[StoryGenerationService] #{e.class}: #{e.message}")
     ai_generation&.update(
       status: :failed,
@@ -66,7 +66,7 @@ class StoryGenerationService
       以下の投稿内容から、心あたたまる短いストーリーを日本語で作成してください。
 
       - メッセージ: #{@post.message}
-      - 思い出の日付: #{@post.posted_on&.strftime("%Y-%m-%d")}
+      - 思い出の日付: #{@post.posted_on&.strftime('%Y-%m-%d')}
       - 画像URL: #{@post.image_url}
 
       次の JSON 形式で返してください:
@@ -82,13 +82,13 @@ class StoryGenerationService
     json = JSON.parse(content)
     {
       title: json["title"].presence || "思い出のストーリー",
-      body:  json["body"].presence  || content
+      body: json["body"].presence || content
     }
   rescue JSON::ParserError
     lines = content.to_s.split(/\R/)
     {
       title: (lines.shift || "思い出のストーリー").truncate(50),
-      body:  lines.join("\n").presence || content
+      body: lines.join("\n").presence || content
     }
   end
 end

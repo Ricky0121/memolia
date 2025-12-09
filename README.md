@@ -88,10 +88,14 @@ MVPリリースまでに実装したい機能
 ・共通のトップ画面
 ・アカウントログインページ
 ・アカウントの思い出投稿一覧
+・アカウントのストーリー一覧
 ・アカウント毎の画像アップロード+メッセージ機能
 ・ストーリーAI自動生成機能
+　AI によるストーリー生成（投稿1件ごと）
+　1週間分の投稿からAIがまとめてストーリー生成(periodStory機能)
 　参考URL：https://www.gluegent.com/blog/2024/05/gpt-4o-api.html
 　　　　　　https://qiita.com/MaTTA_RUNTEQ50B/items/3cb46ddf1be17899df00
+・日本語ローカライズ（i18n）
 
 MVPリリース時点では個人で写真+メッセージからストーリーの自動生成が出来るところまでを実装します。
 
@@ -111,7 +115,8 @@ MVPリリース時点では個人で写真+メッセージからストーリー�
 データベース：PostgreSQL
 デプロイ先：Render
 ユーザー認証機能：Devise
-AIストーリー生成機能：OpenAI API(gpt-5o mini)
+AIストーリー生成機能：OpenAI API(gpt-5 mini)
+国際化：i18n（日本語対応）
 ストレージ管理機能：ActiveStorage
 外部ストレージサービス：AWS S3
 

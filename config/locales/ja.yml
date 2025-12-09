@@ -1,4 +1,11 @@
 ja:
+  activerecord:
+    attributes:
+      user:
+        name: "名前"
+        email: "Eメール"
+        password: "パスワード"
+
   flash:
     posts:
       create:
